@@ -1,9 +1,8 @@
-package algo_0810;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Baekjoon_16935 {
+	// 상하반전
 	static void case1() {
 		int idx = map.length - 1;
 		for (int i = 0; i < map.length / 2; i++) {
@@ -14,7 +13,7 @@ public class Baekjoon_16935 {
 		}
 
 	}
-
+	// 좌우반전
 	static void case2() {
 		for (int i = 0; i < map.length; i++) {
 			int idx1 = map[0].length - 1;
@@ -27,7 +26,7 @@ public class Baekjoon_16935 {
 		}
 
 	}
-
+	// 오른쪽 90도 회전
 	static void case3() {
 		rotmap = new int[M][N];
 		int c = N - 1;
@@ -42,7 +41,7 @@ public class Baekjoon_16935 {
 		M = tmp;
 		map = rotmap;
 	}
-
+	// 왼쪽 90도 회전
 	static void case4() {
 		rotmap = new int[M][N];
 		for (int i = 0; i < N; i++) {

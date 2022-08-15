@@ -1,35 +1,30 @@
-package algo_0810;
-
 import java.util.Scanner;
 
 public class Baekjoon_1010 {
-	/*static int comb(int m, int n) {
-		if(n == m || n == 0) {
-			return 1;
-		}
-		return comb(m-1, n-1)+comb(m-1, n);
-	}*/
-	static int[][] comb = new int[30][30];
+	// 0<N<=M<30
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		StringBuilder str = new StringBuilder();
-		for(int i=1; i<30; i++) {
-			for(int j=0; j<30; i++) {
-				if(i==j||j==0) {
-					comb[i][j] = 1;
-					continue;
-				}
-				if(!(j-1 < 0))
-				comb[i][j] = comb[i-1][j-1] + comb[i-1][j];
+		// 조합을 담을 배열
+		int[][] comb = new int[31][31];
+
+		// i개 중 1를 뽑을 경우의 수를 담아준다.
+		for (int i = 1; i < 31; i++) {
+			comb[i][1] = i;
+		}
+
+		// 2부터 30까지의 조합을 담아준다.
+		for (int i = 2; i < 31; i++) {
+			for (int j = 2; j < i + 1; j++) {
+				comb[i][j] = comb[i - 1][j - 1] + comb[i - 1][j];
 			}
 		}
 		int t = sc.nextInt();
 		for (int tc = 0; tc < t; tc++) {
 			int N = sc.nextInt();
 			int M = sc.nextInt();
-			
-			str.append(comb[N][M]);
+
+			System.out.println(comb[M][N]);
 		}
-		System.out.println(str);
+
 	}
 }
