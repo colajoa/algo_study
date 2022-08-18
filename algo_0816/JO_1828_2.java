@@ -18,8 +18,8 @@ public class JO_1828_2 {
 		int max = chem[0][1];
 		
 		for(int i=1, size = chem.length; i<size; i++) {
-			if(max <= chem[i][0] ) {
-				max = chem[i][0];
+			if(max < chem[i][0] ) {
+				max = chem[i][1];
 				cnt += 1;
 			}
 		}
