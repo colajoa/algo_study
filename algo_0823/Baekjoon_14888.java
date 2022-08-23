@@ -14,7 +14,7 @@ public class Baekjoon_14888 {
 	static int max = Integer.MIN_VALUE;
 	static int min = Integer.MAX_VALUE;
 	static void dfs(int ans, int depth) {
-		if(depth == N-1) {
+		if(depth == N) {
 			max = Math.max(max, ans);
 			min = Math.min(min, ans);
 			return;
@@ -64,7 +64,7 @@ public class Baekjoon_14888 {
 			op[i] = Integer.parseInt(token.nextToken());
 		}
 
-		dfs(nums[0], 0);
+		dfs(nums[0], 1);
 		
 		bw.write(max+"\n"+min);
 		bw.close();
